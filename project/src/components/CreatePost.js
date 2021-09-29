@@ -3,10 +3,13 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-function CreatePost() {
+function CreatePost({addPost}) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [songLink, setSongLink] = useState("");
+//   const [likes, setLikes] = useState("");
+  const [comments, setComments] = useState("");
+  
 
   const history = useHistory();
 
@@ -25,9 +28,12 @@ function CreatePost() {
       title,
       description,
       songLink,
+      comments,
     };
     
     await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/post`, body);
+    addPost(body)
+
     toast.success("Post created");
     history.push("/feed");
   };
@@ -63,6 +69,13 @@ function CreatePost() {
         />
         <br/>
         <br/>
+
+        <label>Comments </label>
+        <input
+          type="text"
+          onChange={(e) => setComments(e.target.value)}
+          value={comments}
+        />
 
         {/* <label>Image</label>
         <input type="file" onChange={(e) => setImage(e.target.files[0])} /> */}
