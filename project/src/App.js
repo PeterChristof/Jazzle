@@ -6,7 +6,7 @@ import Login from './components/Login';
 import NavBar from './components/NavBar';
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import CreatePost from "./components/CreatePost"
 
 function App() {
   const [loggedInUser,setCurrentLoggedInUser]=  useState("");
@@ -26,9 +26,10 @@ function App() {
 
   return (
     <div className="App">
-         <NavBar loggedInUser={loggedInUser} />
+         <NavBar loggedInUser={loggedInUser} setCurrentLoggedInUser={setCurrentLoggedInUser} />
           <Switch> 
           <Route exact path={["/", "/feed"]} component={Feed} />
+          <Route exact path="/post" component={CreatePost} />
           <Route path="/signup" component={Signup} />
           <Route 
         path="/login" 

@@ -3,7 +3,7 @@ import { useHistory, NavLink } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-function Login() {
+function Login({setCurrentLoggedInUser}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
