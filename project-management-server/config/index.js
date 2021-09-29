@@ -17,7 +17,7 @@ const favicon = require("serve-favicon");
 // https://www.npmjs.com/package/path
 const path = require("path");
 
-// const cors = require("cors");
+const cors = require("cors");
 
 // Middleware configuration
 module.exports = (app) => {
@@ -39,10 +39,10 @@ module.exports = (app) => {
   // Handles access to the favicon
   app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico")));
 
-// app.use(cors({
-//   credentials: true,
-//   origin:[process.env.CLIENT_HOSTNAME],
-// })
-// );
+app.use(cors({
+  credentials: true,
+  origin:[process.env.CLIENT_HOSTNAME],
+})
+);
 
 };
