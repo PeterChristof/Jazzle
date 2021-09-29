@@ -4,9 +4,9 @@ const bcrypt = require("bcryptjs");
 
 
 router.post("/signup", async (req, res) => {
-  const { username, password, email } = req.body;
+  const { username, password } = req.body;
 
-  if (username === "" || password === "" || email === "") {
+  if (username === "" || password === "") {
 res.status(400).json({ message: "missing fields" });
     
     return;
@@ -24,7 +24,6 @@ res.status(400).json({ message: "missing fields" });
   const hashedPassword = bcrypt.hashSync(password, salt);
   const newUser = await User.create({
     username,
-    email,
     password: hashedPassword,
   });
   res.status(200).json(newUser);
@@ -34,8 +33,7 @@ router.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
   if (username === "" || password === "") {
-    // res.render("auth/login", { errorMessage: "Fill username and password" });
-    res.status(400).json({message: "missing fields"});
+    res.render("auth/login", { errorMessage: "Fill username and password" });
     return;
   }
   const user = await User.findOne({ username });
