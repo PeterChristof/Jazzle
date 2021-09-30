@@ -7,7 +7,7 @@ function CreatePost({addPost}) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [songLink, setSongLink] = useState("");
-//   const [likes, setLikes] = useState("");
+  const [likes, setLikes] = useState("");
   const [comments, setComments] = useState("");
   
 
@@ -29,6 +29,7 @@ function CreatePost({addPost}) {
       description,
       songLink,
       comments,
+      likes,
     };
     
     await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/post`, body);

@@ -23,7 +23,7 @@ function Login({setCurrentLoggedInUser}) {
       if (response.data.username) {
         toast.success("Login success");
         setCurrentLoggedInUser(response.data); //Comes from the app component
-        history.push("/"); //redirect path
+        history.push("/feed"); //redirect path
       }
     } catch (e) {
       toast.error("Invalid login");

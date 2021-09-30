@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios"; 
+import Navbar from 'react-bootstrap/Navbar'
 
 function NavBar({loggedInUser, setCurrentLoggedInUser}) {
     const logoutUser = async () => {
@@ -14,6 +15,9 @@ function NavBar({loggedInUser, setCurrentLoggedInUser}) {
       return loggedInUser ? (
         <>
          <p>Welcome {loggedInUser.username}</p>
+
+
+
         <nav>
           <ul>
           <li>
@@ -48,13 +52,9 @@ function NavBar({loggedInUser, setCurrentLoggedInUser}) {
                 Login
               </NavLink>
             </li>
-            <li>
-                <NavLink activeStyle={{ color: "red" }} exact to="/">
-                 Feed
-                </NavLink>
-              </li>
           </ul>
-        </nav>
+          </nav>
+          
       );
     }
 

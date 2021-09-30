@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+// import { NavLink } from "react-router-dom";
+// import Navbar from 'react-bootstrap/Navbar'
+import NavBar from "./NavBar";
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -18,12 +21,13 @@ function Signup() {
     };
     await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/signup`, body);
     toast.success("Signup success");
-    history.push("/");
+    history.push("/login");
   };
 
   return (
     <>
-      <h2>Signup</h2>
+      
+      <h3>Signup</h3>
       <form onSubmit={handleFormSubmit}>
         <label>Username</label>
         <input
