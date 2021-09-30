@@ -1,4 +1,5 @@
 const router = require("express").Router()
+const Like = require("../models/Like.model.js");
 const Post = require("../models/Post.model.js");
 const User = require("../models/User.model.js");
 const { post } = require("./index.js");
@@ -65,7 +66,7 @@ try {
             console.log("error", e)
             res.status(500).json({message:e.message});
         }
-    });
+});
 
     // router.post("/upload", fileUpload.single("file"), (req, res) => {
     //     try {
@@ -75,6 +76,7 @@ try {
     // res.status(500).json({ message: e.message });
     // }
     // });
+
 
     // router.put("/:id/like",async(req,res)=>{
     //     try{
@@ -91,5 +93,31 @@ try {
     //         return res.status(500).json(e)
     //     }
 // })
+
+router.post("/post/:postId/like", async (req, res) =>{
+    const post = await Post.findById(req.params.postId);
+    const user = await User.findById(req.session.currentUser._id);
+    console.log(post);
+    console.log(user);
+
+try {
+    const like = await Like.create({
+        user,
+        post
+    });
+
+    const newPost = await Post.findByIdAndUpdate(req.params.postId, {
+        $push:{
+            likes: like
+        }
+    }, { new: true})
+    res.status(200).json(newPost)
+} catch (error) {
+    console.log("error", e)
+        res.status(500).json({message:e.message});
+}
+
+    
+})
 
 module.exports = router;
