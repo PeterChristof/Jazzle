@@ -64,7 +64,7 @@ function CreatePost({addPost}) {
 
         <label>Song-Link </label>
         <input
-          type="text"
+          type="url"
           onChange={(e) => setSongLink(e.target.value)}
           value={songLink}
         />

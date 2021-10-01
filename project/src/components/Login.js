@@ -32,8 +32,8 @@ function Login({setCurrentLoggedInUser}) {
 
   return (
     <>
-    <div className="auth-center">
-      <h3 className="bg-community">Login</h3>
+    <div>
+      <h3>Login</h3>
       <form onSubmit={handleFormSubmit}>
         <label>Username</label>
         <input
@@ -41,7 +41,8 @@ function Login({setCurrentLoggedInUser}) {
           onChange={(e) => setUsername(e.target.value)}
           value={username}
         />
-
+        <br/>
+        <br/>
         <label>Password</label>
         <input
           type="password"

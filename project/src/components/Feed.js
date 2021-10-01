@@ -5,6 +5,7 @@ import CreatePost from "./CreatePost";
 import { useHistory } from "react-router";
 
 function Feed() {
+  
   const [posts, setPosts] = useState([]);
   const [likes, setLikes] = useState("");
   const history = useHistory();
@@ -45,6 +46,11 @@ function Feed() {
     history.push("/feed");
   };
 
+  //testing following
+
+  
+  
+
   return (
     <>
       <div>
@@ -61,8 +67,9 @@ function Feed() {
                 <span className="bold">Description</span>: {post.description}
               </p>
               <p>
-                <span className="bold">songLink</span>: {post.songLink}
+                <span className="bold">songLink</span>:<a href={post.songLink} target="_blank">song</a> 
               </p>
+              {/* <h5>posted by {loggedInUser.username}</h5> */}
               <div>
                 <p> {post.likes.length} Likes</p>
                 <button onClick={() => handleFormSubmit(post._id)}>Like</button>

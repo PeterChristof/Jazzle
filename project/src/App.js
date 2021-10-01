@@ -3,12 +3,13 @@ import {Switch, Route} from "react-router-dom";
 import Feed from './components/Feed';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import { ToastContainer, toast } from 'react-toastify';
 import NavBar from './components/NavBar';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from 'react-bootstrap/Navbar'
 import './Login.css';
-
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [loggedInUser,setCurrentLoggedInUser]=  useState("");
@@ -31,7 +32,7 @@ function App() {
     <div className="App">
 
 
-
+        <ToastContainer/>
          <NavBar loggedInUser={loggedInUser} setCurrentLoggedInUser={setCurrentLoggedInUser} />
           <Switch> 
           <Route exact path={["/", "/signup"]} component={Signup} />
