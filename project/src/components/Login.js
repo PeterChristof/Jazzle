@@ -32,7 +32,8 @@ function Login({setCurrentLoggedInUser}) {
 
   return (
     <>
-      <h2>Login</h2>
+    <div className="auth-center">
+      <h3 className="bg-community">Login</h3>
       <form onSubmit={handleFormSubmit}>
         <label>Username</label>
         <input
@@ -48,10 +49,14 @@ function Login({setCurrentLoggedInUser}) {
           value={password}
         />
 
-        <button type="submit">Login</button>
+        <br/>
+
+        <button type="submit" className="mainBtn">Login</button>
       </form>
       Don't have an account? Register here <NavLink to="/signup">Here </NavLink>
+      </div>
     </>
+    
   );
 }
 

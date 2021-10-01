@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from 'react-bootstrap/Navbar'
+import './Login.css';
 
 
 function App() {
