@@ -22,7 +22,7 @@ const userSchema = new Schema({
      default:"http://res.cloudinary.com/dedenco/image/upload/v1599511161/qxexqvsfekvmrupbfdqh.png"
     },
     followers:[{type:ObjectId,ref:"User"}],
-    following:[{type:ObjectId,ref:"User"}]
+    followings:[{type:ObjectId,ref:"User"}]
 })
 
 const User = model("User", userSchema);

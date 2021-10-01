@@ -1,4 +1,5 @@
 const router = require("express").Router()
+const e = require("express");
 const Like = require("../models/Like.model.js");
 const Post = require("../models/Post.model.js");
 const User = require("../models/User.model.js");
@@ -6,7 +7,7 @@ const { post } = require("./index.js");
 // const fileUpload = require("../config/cloudinary");
 
 router.post("/post",async(req,res)=>{
-    const {title, description, songLink, 
+    const {title, description, songLink, postedBy,
         // likes, 
 // comments
 } = req.body;
@@ -14,7 +15,7 @@ router.post("/post",async(req,res)=>{
         res.status(400).statusMessage({message: "missing fields - complete your post"});
         return;
     } try {
-        const response = await Post.create({title, description, songLink,
+        const response = await Post.create({title, description, songLink, postedBy,
             // likes,
             // comments
         });
@@ -48,14 +49,14 @@ router.delete("/post/:id", async (req, res) => {
 });
 
 router.put("/post/:id", async (req, res) => {
-    const {title, description, songLink, 
+    const {title, description, songLink, postedBy,
         // likes,
         //  comments
         } = req.body;
 try {
     const response = await Post.findByIdAndUpdate(
         req.params.id, {
-            title, description, songLink, 
+            title, description, songLink, postedBy,
             // likes,
             //  comments
             },
@@ -78,21 +79,6 @@ try {
     // });
 
 
-    // router.put("/:id/like",async(req,res)=>{
-    //     try{
-    //         const post = await Post.findById(req.params.id)
-
-    //         if(!post.likes.includes(req.body)){
-    //            await post.updateOne({$push: {likes: req.body.userId}})
-    //            res.status(200).json("post has been liked")
-    //         }else{
-    //             await post.updateOne({$pull: {likes: req.body.userId}})
-    //             res.status(200).json("post has been disliked")
-    //         }
-    //     }catch(e){
-    //         return res.status(500).json(e)
-    //     }
-// })
 
 router.post("/post/:postId/like", async (req, res) =>{
     const post = await Post.findById(req.params.postId);
@@ -116,8 +102,52 @@ try {
     console.log("error", e)
         res.status(500).json({message:e.message});
 }
-
     
-})
+});
+
+
+router.post("/post/:postId/comment", async (req, res) => {
+    try {
+    const { comment } = req.body;
+    await Post.findByIdAndUpdate(req.params.postId, {
+      $push: { comments: { comment } },
+    }, {new: true})
+    
+    res.status(200).json(newPost);
+    } catch (error) {
+        console.log("error", e)
+            res.status(500).json({message:e.message});
+    }
+  });
+
+
+
+
+
+
+// router.post("/post/:postId/comment", async (req, res) =>{
+//     const post = await Post.findById(req.params.postId);
+//     const user = await User.findById(req.session.currentUser._id);
+//     console.log(post);
+//     console.log(user);
+
+// try {
+//     const comment = await Comment.create({
+//         user,
+//         post
+//     });
+
+//     const newPost = await Post.findByIdAndUpdate(req.params.postId, {
+//         $push:{
+//             comments: { comment, postedBy }
+//         }
+//     }, { new: true})
+//     res.status(200).json(newPost)
+// } catch (error) {
+//     console.log("error", e)
+//         res.status(500).json({message:e.message});
+// }
+// });
+
 
 module.exports = router;
