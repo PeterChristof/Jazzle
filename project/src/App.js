@@ -10,6 +10,9 @@ import axios from "axios";
 import Navbar from 'react-bootstrap/Navbar'
 import './Login.css';
 import "react-toastify/dist/ReactToastify.css";
+import PostDetails from './components/PostDetails';
+import EditPost from './components/EditPost';
+import UserProfile from './components/UserProfile';
 
 function App() {
   const [loggedInUser,setCurrentLoggedInUser]=  useState("");
@@ -36,12 +39,23 @@ function App() {
          <NavBar loggedInUser={loggedInUser} setCurrentLoggedInUser={setCurrentLoggedInUser} />
           <Switch> 
           <Route exact path={["/", "/signup"]} component={Signup} />
-          <Route exact path={"/feed"} component={Feed} />
+          <Route exact path={"/feed"} render={()=> {
+            return <Feed loggedInUser={loggedInUser}/>;
+          }} />
+          <Route exact path="/post/:id" component={PostDetails} />
+          <Route path="/post/:id/edit" component={EditPost} />
+
           {/* <Route path="/signup" component={Signup} /> */}
           <Route path="/login" render={()=> {
           return <Login setCurrentLoggedInUser={setCurrentLoggedInUser} />;
         }} />
 
+        <Route path="/user/:id" component={UserProfile} />
+        {/* Create userprofile page
+            Access this page/component from the Feed 
+            Add links to follow and unfollow
+
+         */}
           </Switch>
      
     </div>

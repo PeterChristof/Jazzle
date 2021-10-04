@@ -14,47 +14,50 @@ function NavBar({loggedInUser, setCurrentLoggedInUser}) {
 
       return loggedInUser ? (
         <>
-         <p>Welcome {loggedInUser.username}</p>
 
+         <p className="Jazzle">JAZZLE - {loggedInUser.username}</p>
 
-
-        <nav>
-          <ul>
-          <li>
-                <NavLink activeStyle={{ color: "red" }} exact to="/">
+        <nav className="navbar-Nav">
+          {/* <ul>
+          <li> */}
+                <NavLink activeStyle={{ color: "white" }} exact to="/feed">
                  Feed
                 </NavLink>
-              </li>
-                <li>
-                <NavLink activeStyle={{ color: "red" }} to="/feed">
+              {/* </li> */}
+                {/* <li> */}
+                <NavLink activeStyle={{ color: "white" }} to="/feed">
                 Create Post
               </NavLink>
-            </li>
+            {/* </li> */}
 
-          <li>
+          {/* <li> */}
                 <NavLink exact to="/">
                   <button onClick={logoutUser}>Logout</button>
                 </NavLink>
-              </li>
-          </ul>
+              {/* </li> */}
+          {/* </ul> */}
         </nav>
         </>
          ) : (
-          <nav>
-          <ul>
-            <li>
-              <NavLink activeStyle={{ color: "red" }} to="/signup">
+           <>
+          <p className="Jazzle"> Welcome to JAZZLE</p>
+          
+          <nav className="navbar-nav" className="mainBtn">
+          {/* <ul> */}
+            {/* <li> */}
+              <NavLink activeStyle={{ color: "white" }} to="/signup" >
                 Signup
               </NavLink>
-            </li>
-            <li>
-              <NavLink activeStyle={{ color: "red" }} to="/login">
+            {/* </li> */}
+            {/* <li> */}
+            <br/>
+              <NavLink activeStyle={{ color: "white" }} to="/login">
                 Login
               </NavLink>
-            </li>
-          </ul>
+            {/* </li> */}
+          {/* </ul> */}
           </nav>
-          
+          </>
       );
     }
 

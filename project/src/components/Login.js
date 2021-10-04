@@ -32,14 +32,18 @@ function Login({setCurrentLoggedInUser}) {
 
   return (
     <>
-    <div className="auth-center">
-      <h3>Login</h3>
+     <main className='flex-row justify-center mb-2' className="Height">
+      <div className='col-12 col-md-12'>
+        <div className='card'>
+          <h4 className='card-header'>Login</h4>
+          <div className='card-body'>
       <form onSubmit={handleFormSubmit}>
         <label>Username</label>
         <input
           type="text"
           onChange={(e) => setUsername(e.target.value)}
           value={username}
+          placeholder='Your username'
         />
         <br/>
         <br/>
@@ -48,6 +52,7 @@ function Login({setCurrentLoggedInUser}) {
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
+          placeholder='******'
         />
 
         <br/>
@@ -55,7 +60,10 @@ function Login({setCurrentLoggedInUser}) {
         <button type="submit" className="mainBtn">Login</button>
       </form>
       Don't have an account? Register here <NavLink to="/signup">Here </NavLink>
-      </div>
+            </div>
+          </div>
+        </div>
+      </main> 
     </>
     
   );

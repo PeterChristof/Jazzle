@@ -1,8 +1,30 @@
+
 .App {
   text-align: center;
+  background-image: url("../src/Images/logo_ncs_1v2.jpeg");
+  border-image-width: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.App-logo {
+.textColor {
+color: white;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 30;
+    list-style: none;
+    align-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    min-height: 100vh;  
+}
+
+.Height {
+  min-height: 100vh;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -11,9 +33,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,9 +44,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
-.App-link {
+/* .App-link {
   color: #61dafb;
 }
 
@@ -35,17 +57,22 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
-.card {
+.feedCard {
   border-radius: 20px;
   background-color: rgb(236, 236, 236);
+  opacity: 0.5;
   border: 2px solid #212529;
-  width: 60vw;
+  width: auto;
   min-height: 30vh;
   display: flex;
-  gap: 30px;
+  gap: 10px;
   flex-direction: column;
+  margin-top: 20px;
+  color: black;
+  padding: 40px 40px;
+  margin: 40px 40px;
 }
 
 .card form {
@@ -53,4 +80,36 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+/* SignUp */
+
+.signUp {
+  background-image: url("../src/Images/LoginPic.jpeg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  display: flex;
+  height:auto;
+}
+
+.Jazzle {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-size: 40px;
+}
+
+.CreatePost {
+
+}
+
+.navbar-Nav {
+  display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    align-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 }
