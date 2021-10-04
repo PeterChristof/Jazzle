@@ -1,0 +1,22 @@
+.auth-center {
+display: flex;
+flex-direction: column;
+background-image: "../public/LoginPic.jpeg";
+background-size: cover;
+height: 100%;
+}
+
+.mainBtn {
+    margin-top: 5%;
+    padding: 5px 50px;
+    background-color: #212529;
+    color: rgb(236, 236, 236);  
+    text-decoration: none;
+    font-size: 1.0rem;
+  }
+
+  .login-card {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
