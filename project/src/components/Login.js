@@ -32,7 +32,7 @@ function Login({setCurrentLoggedInUser}) {
 
   return (
     <>
-    <div>
+    <div className="auth-center">
       <h3>Login</h3>
       <form onSubmit={handleFormSubmit}>
         <label>Username</label>

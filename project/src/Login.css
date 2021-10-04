@@ -1,6 +1,9 @@
 .auth-center {
 display: flex;
 flex-direction: column;
+background-image: "../public/LoginPic.jpeg";
+background-size: cover;
+height: 100%;
 }
 
 .mainBtn {
