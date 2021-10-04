@@ -28,7 +28,7 @@ router.post("/post",async(req,res)=>{
 router.get("/post", async (req, res) => {
     try {
         console.log("here")
-        const post = await Post.find().sort({ createdAt: -1});
+        const post = await Post.find().sort({ createdAt: -1}).populate("postedBy");
         res.status(200).json(post);
     } catch(e) {
         res.status(500).json({message: e});
