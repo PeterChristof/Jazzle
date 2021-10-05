@@ -3,8 +3,8 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 // import { NavLink } from "react-router-dom";
-import Navbar from 'react-bootstrap/Navbar'
-import NavBar from "./NavBar";
+// import Navbar from 'react-bootstrap/Navbar'
+// import NavBar from "./NavBar";
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -26,13 +26,13 @@ function Signup() {
 
   return (
     <>
-     <main className='flex-row justify-center mb-2' className="Height">
-      <div className='col-12 col-md-12'>
+     <main className="Sign">
+      <div>
         <div className='card'>
           <h4 className='card-header'>Sign Up</h4>
           <div className='card-body'>
       <form onSubmit={handleFormSubmit}>
-        <label>Username</label>
+        <label>Username: </label>
         <input
           type="text"
           onChange={(e) => setUsername(e.target.value)}
@@ -40,7 +40,8 @@ function Signup() {
           placeholder='Your username'
         />
   <br/>
-        <label>Password</label>
+        <br/>
+        <label>Password: </label>
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
@@ -48,14 +49,16 @@ function Signup() {
           placeholder='******'
         />
 <br/>
-       <label>Email</label>
+        <br/>
+       <label>E-Mail:</label>
         <input
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
           placeholder='Your email'
         />
-
+<br/>
+        <br/>
         <button className="mainBtn" type='submit'>
                 Submit
               </button>

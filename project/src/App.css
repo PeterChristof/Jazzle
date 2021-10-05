@@ -1,115 +1,64 @@
+/* NavBar */
 
-.App {
-  text-align: center;
-  background-image: url("../src/Images/logo_ncs_1v2.jpeg");
-  border-image-width: auto;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+.nav-bar {
+  background-color: rgb(25, 33, 41);
+  padding: 14px 0;
 }
 
-.textColor {
-color: white;
-font-family: Verdana, Geneva, Tahoma, sans-serif;
-display: flex;
-    flex-direction: row;
-    padding-left: 0;
-    margin-bottom: 30;
-    list-style: none;
-    align-content: space-between;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    min-height: 100vh;  
-}
-
-.Height {
-  min-height: 100vh;
-}
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-bar-ul {
+  width: 1200px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+}
+
+.nav-button {
+    background-color: #fdfbfb;
+    border: none;
+    color: rgb(5, 5, 5);
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    border-radius: 10%;
+    transition-duration: 0.4s;
+    font: bold;
+}
+
+.nav-button:hover {
+  background-color: #4CAF50; /* Green */
   color: white;
-} */
-
-/* .App-link {
-  color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-.feedCard {
-  border-radius: 20px;
-  background-color: rgb(236, 236, 236);
-  opacity: 0.5;
-  border: 2px solid #212529;
-  width: auto;
-  min-height: 30vh;
+.Welcome {
   display: flex;
-  gap: 10px;
-  flex-direction: column;
-  margin-top: 20px;
-  color: black;
-  padding: 40px 40px;
-  margin: 40px 40px;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(25, 33, 41);
+  color: white;
+  font-family: cursive;
+  font-size: 1.5em;
 }
 
-.card form {
+/* Footer */
+
+.Footer {
+  color: white;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  justify-content: center;
+  text-align: center;
+  font-family: cursive;
+  font-size: 0.8em;
 }
 
 /* SignUp */
 
-.signUp {
-  background-image: url("../src/Images/LoginPic.jpeg");
-  background-repeat: no-repeat;
-  background-size: auto;
-  display: flex;
-  height:auto;
-}
-
-.Jazzle {
+.Sign {
+  min-height: 80vh;
   display: flex;
   justify-content: space-around;
-  color: white;
-  font-size: 40px;
+    align-content: center;
+    align-items: center;
 }
 
-.CreatePost {
-
-}
-
-.navbar-Nav {
-  display: flex;
-    flex-direction: row;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    align-content: space-between;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-}

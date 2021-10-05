@@ -15,48 +15,49 @@ function NavBar({loggedInUser, setCurrentLoggedInUser}) {
       return loggedInUser ? (
         <>
 
-         <p className="Jazzle">JAZZLE - {loggedInUser.username}</p>
-
-        <nav className="navbar-Nav">
-          {/* <ul>
-          <li> */}
+        <nav className="nav-bar">
+          <ul className="nav-bar-ul">
+          <li>
                 <NavLink activeStyle={{ color: "white" }} exact to="/feed">
                  Feed
                 </NavLink>
-              {/* </li> */}
-                {/* <li> */}
+              </li>
+                <li>
                 <NavLink activeStyle={{ color: "white" }} to="/feed">
                 Create Post
               </NavLink>
-            {/* </li> */}
+            </li>
 
-          {/* <li> */}
+          <li>
                 <NavLink exact to="/">
-                  <button onClick={logoutUser}>Logout</button>
+                  <button onClick={logoutUser} className="nav-button">Logout</button>
                 </NavLink>
-              {/* </li> */}
-          {/* </ul> */}
+              </li>
+          </ul>
         </nav>
+        <p>Start Jazzling - {loggedInUser.username}</p>
         </>
          ) : (
            <>
-          <p className="Jazzle"> Welcome to JAZZLE</p>
           
-          <nav className="navbar-nav" className="mainBtn">
-          {/* <ul> */}
-            {/* <li> */}
+          
+          <nav className="nav-bar">
+          <ul className="nav-bar-ul">
+            <li>
               <NavLink activeStyle={{ color: "white" }} to="/signup" >
                 Signup
               </NavLink>
-            {/* </li> */}
-            {/* <li> */}
-            <br/>
+            </li>
+            <li>
+            
               <NavLink activeStyle={{ color: "white" }} to="/login">
                 Login
               </NavLink>
-            {/* </li> */}
-          {/* </ul> */}
+            </li>
+          </ul>
           </nav>
+          
+          <div className="Welcome"> Welcome to JAZZLE</div>
           </>
       );
     }

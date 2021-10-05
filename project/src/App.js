@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import PostDetails from './components/PostDetails';
 import EditPost from './components/EditPost';
 import UserProfile from './components/UserProfile';
+import Footer from './components/Footer';
 
 function App() {
   const [loggedInUser,setCurrentLoggedInUser]=  useState("");
@@ -32,7 +33,7 @@ function App() {
 
   return (
     
-    <div className="App">
+    <div>
 
 
         <ToastContainer/>
@@ -57,7 +58,7 @@ function App() {
 
          */}
           </Switch>
-     
+         <Footer/>
     </div>
   );
 }

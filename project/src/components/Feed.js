@@ -70,11 +70,13 @@ function Feed({ loggedInUser }) {
 
   return (
     <>
+    
+    
       {loggedInUser && (
-        <div>
+        <div className="App">
           <CreatePost addPost={addPost} loggedInUser={loggedInUser} />
         </div>
-        
+       
       )}
 
       <ul>
@@ -115,6 +117,7 @@ function Feed({ loggedInUser }) {
               <NavLink to={`/post/${post._id}`}>Details</NavLink>
               </div>
             </div>
+            
             </>
           );
         })}

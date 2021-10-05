@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory, NavLink } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import NavBar from "./NavBar";
 
 function Login({setCurrentLoggedInUser}) {
   const [username, setUsername] = useState("");
@@ -32,13 +33,13 @@ function Login({setCurrentLoggedInUser}) {
 
   return (
     <>
-     <main className='flex-row justify-center mb-2' className="Height">
-      <div className='col-12 col-md-12'>
+     <main className="Sign">
+      <div>
         <div className='card'>
           <h4 className='card-header'>Login</h4>
           <div className='card-body'>
       <form onSubmit={handleFormSubmit}>
-        <label>Username</label>
+        <label>Username: </label>
         <input
           type="text"
           onChange={(e) => setUsername(e.target.value)}
@@ -47,7 +48,7 @@ function Login({setCurrentLoggedInUser}) {
         />
         <br/>
         <br/>
-        <label>Password</label>
+        <label>Password: </label>
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
